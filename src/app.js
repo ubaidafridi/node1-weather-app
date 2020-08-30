@@ -7,7 +7,7 @@ const forcast = require('./utils/forcast');
 
 const { query } = require('express');
 const app = express();
-
+const port = process.env.PORT || 3000;
 
 const publicDirectoryPath= path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../Templates/views')
@@ -83,6 +83,6 @@ app.get('/product',(req,res)=>{
     })
 })    
 
-app.listen('3000',()=>{
+app.listen(port,()=>{
     console.log('listening on port 3000');
 })
